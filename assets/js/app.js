@@ -4,6 +4,8 @@ var topics = ["baseball", "football", "basketball", "soccer", "hockey", "tennis"
 
 function createButtons() {
 
+    $("#topic-buttons").empty();
+
     for (var i = 0; i < topics.length; i++) {
         
         var a = $("<button>");
@@ -24,8 +26,9 @@ $("#add-sport").on("click", function(event) {
 
     var topic = $("#sport-input").val().trim();
 
-    //adds button, need data-name & class designation
-    $("#topic-buttons").append("<button>" + topic + "</button>");
+    topics.push(topic);
+
+    createButtons();
 
 });
 
@@ -50,13 +53,21 @@ $("button").on("click", function() {
       .done(function(response) {
       
         var gifs = response.data;
+        console.log(response)
       
       for (var i = 0; i < gifs.length; i++) {
         
         var image = $("<img>").attr("src", gifs[i].images.downsized.url);
-        console.log(image);
+
+        var rating = gifs[i].rating;
+        console.log(rating);
+
+        var p = $("<p>").text("Rating: " + rating);
+        console.log(p)
         
         $("#gifs-here").append(image);
+
+       
     }
 })});
 
