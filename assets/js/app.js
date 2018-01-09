@@ -34,13 +34,13 @@ $("#add-sport").on("click", function(event) {
 
 createButtons();
 
-$("button").on("click", function() {
+$(document).on("click", ".sports", function() {
 
     var clickedBtn = $(this).attr("data-name");
     console.log(clickedBtn);
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + clickedBtn + "&api_key=OQsUJXjxQqapDlxqn92Zbiv5jzfHI9z2&limit=10";
-    console.log(queryURL);
+    //console.log(queryURL);
 
     $.ajax({
         
