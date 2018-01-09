@@ -62,8 +62,7 @@ $(document).on("click", ".sports", function() {
         var rating = gifs[i].rating;
         console.log(rating);
 
-        //var p = $("<p>").text("Rating: " + rating);
-        //console.log(p)
+        $("#gifs-here").append("Rating: " + rating);
         
         $("#gifs-here").append(image);
 
