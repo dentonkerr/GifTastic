@@ -36,11 +36,11 @@ createButtons();
 
 $(document).on("click", ".sports", function() {
 
+    $("#gifs-here").empty();
+
     var clickedBtn = $(this).attr("data-name");
-    console.log(clickedBtn);
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + clickedBtn + "&api_key=OQsUJXjxQqapDlxqn92Zbiv5jzfHI9z2&limit=10";
-    //console.log(queryURL);
 
     $.ajax({
         
@@ -62,12 +62,11 @@ $(document).on("click", ".sports", function() {
         var rating = gifs[i].rating;
         console.log(rating);
 
-        var p = $("<p>").text("Rating: " + rating);
-        console.log(p)
+        //var p = $("<p>").text("Rating: " + rating);
+        //console.log(p)
         
         $("#gifs-here").append(image);
 
-       
     }
 })});
 
