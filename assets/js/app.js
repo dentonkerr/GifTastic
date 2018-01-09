@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 var topics = ["baseball", "football", "basketball", "soccer", "hockey", "tennis", "golf"]
 
 function createButtons() {
@@ -58,7 +60,7 @@ $("button").on("click", function() {
     }
 })});
 
-
+});
 
 
 
