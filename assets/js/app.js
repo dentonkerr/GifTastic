@@ -53,20 +53,38 @@ $(document).on("click", ".sports", function() {
       .done(function(response) {
       
         var gifs = response.data;
-        console.log(response)
+        console.log(gifs)
       
       for (var i = 0; i < gifs.length; i++) {
         
         var image = $("<img>").attr("src", gifs[i].images.downsized.url);
 
         var rating = gifs[i].rating;
-        console.log(rating);
+
+        //get the still from response
+        var still = gifs[i].images.downsized_still.url
+        console.log(still);
+
+        //get animate from response
+        var animate = gifs[i].images.downsized.url
+        console.log(animate)
 
         $("#gifs-here").append("Rating: " + rating);
         
         $("#gifs-here").append(image);
 
     }
+
+    // gifs pause and play on click
+
+    // //$(".sports").on("click", function() {
+    // $(document).on("click", ".sports", function() {
+        
+
+    //     var state = $(this).attr("data-state");
+    //     console.log(state)
+    // });
+
 })});
 
 });
