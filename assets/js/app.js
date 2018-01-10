@@ -59,24 +59,16 @@ $(document).on("click", ".sports", function() {
         
         var img = $("<img>")
 
-        var image = $("<img>").attr("src", gifs[i].images.downsized.url);
+        var imageAnimate = $("<img>").attr("src", gifs[i].images.downsized.url);
         
-        var imageStill = $("<img>").attr("src", still);
+        var imageStill = $("<img>").attr("src", gifs[i].images.downsized_still.url);
         console.log(imageStill);
-        
-        //get the still from response
-        var still = gifs[i].images.downsized_still.url;
-        console.log(still);
-        
-        //get animate from response
-        var animate = gifs[i].images.downsized.url;
-        console.log(animate);
 
         var rating = $("<p>").text("Rating: " + gifs[i].rating);
-        console.log(rating);
+        //console.log(rating);
 
         $("#gifs-here").append(rating);
-        
+        //not pulling in the 10, only 9
         $("#gifs-here").append(imageStill);
 
     }
