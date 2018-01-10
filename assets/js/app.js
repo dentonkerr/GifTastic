@@ -57,18 +57,25 @@ $(document).on("click", ".sports", function() {
       
       for (var i = 0; i < gifs.length; i++) {
         
+        var img = $("<img>")
+
         var image = $("<img>").attr("src", gifs[i].images.downsized.url);
+        
         var imageStill = $("<img>").attr("src", still);
+        console.log(imageStill);
+        
         //get the still from response
-        var still = gifs[i].images.downsized_still.url
-        //console.log(still);
+        var still = gifs[i].images.downsized_still.url;
+        console.log(still);
+        
         //get animate from response
-        var animate = gifs[i].images.downsized.url
-        //console.log(animate)
+        var animate = gifs[i].images.downsized.url;
+        console.log(animate);
 
-        var rating = gifs[i].rating;
+        var rating = $("<p>").text("Rating: " + gifs[i].rating);
+        console.log(rating);
 
-        $("#gifs-here").append("Rating: " + rating);
+        $("#gifs-here").append(rating);
         
         $("#gifs-here").append(image);
 
