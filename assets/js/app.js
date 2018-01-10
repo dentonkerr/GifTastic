@@ -77,7 +77,7 @@ $(document).on("click", ".sports", function() {
 
         $("#gifs-here").append(rating);
         
-        $("#gifs-here").append(image);
+        $("#gifs-here").append(imageStill);
 
     }
 
