@@ -57,36 +57,36 @@ $(document).on("click", ".sports", function() {
       
       for (var i = 0; i < gifs.length; i++) {
         
-        var img = $("<img>")
-
-        var imageAnimate = $("<img>").attr("src", gifs[i].images.downsized.url);
-        
-        var imageStill = $("<img>").attr("src", gifs[i].images.downsized_still.url);
-        console.log(imageStill);
-
         var rating = $("<p>").text("Rating: " + gifs[i].rating);
-        //console.log(rating);
 
         $("#gifs-here").append(rating);
-        //not pulling in the 10, only 9
-        $("#gifs-here").append(imageStill);
 
-    }
+        var img = $("<img>");
 
-    // gifs pause and play on click
+        img.addClass("gifs");
+        img.attr("src", gifs[i].images.downsized_still.url);
+        img.attr("data-animate", gifs[i].images.downsized.url);
+        img.attr("data-still", gifs[i].images.downsized_still.url);
+        img.attr("state", "still");
+        $("#gifs-here").append(img);
 
-    // //$(".sports").on("click", function() {
-    // $(document).on("click", ".sports", function() {
+    };
+
+    $(".gifs").on("click", function() {
+            
+        var state = $(this).attr("state");
+        console.log(state);
+    
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("state", "animate");
+        } 
         
-
-    //     var state = $(this).attr("data-state");
-    //     console.log(state)
-    // });
+        else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("state", "still");
+        }});
 
 })});
 
 });
-
-
-
-
