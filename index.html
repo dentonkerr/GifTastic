@@ -6,20 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GifTastic</title>
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
 
-    <div id="topic-buttons"></div>
+<div class="container">
 
-    <form id="newTopic-form">
-        <label for="new-input">Add a Sport</label>
-        <input type="text" id="sport-input"><br>
-        <input id="add-sport" type="submit" value="Add a Sport">
-    </form>
+    <div class="row">
+        
+        <div class="col-md-6">
 
-    <div id="gifs-here"></div>
+            <div id="topic-buttons"></div>
+
+        </div>
+
+        <div class="col-md-6">
+
+            <form id="newTopic-form">
+                
+                <label for="new-input">Add a Sport</label>
+                
+                <input type="text" id="sport-input"><input id="add-sport" type="submit" value="Add a Sport">
+                
+            </form>
+            
+        </div>
+    
+    </div>
+
+    <div class="row">
+
+        <div id="gifs-here"></div>
+
+    </div>
+
+</div>
         
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/js/app.js"></script>
